@@ -1,0 +1,54 @@
+€ Numero de vertices
+8
+
+€ Vertices
+-0.5 -0.5 -0.5
+ 0.5 -0.5 -0.5
+ 0.5  0.5 -0.5
+-0.5  0.5 -0.5
+-0.5 -0.5  0.5
+ 0.5 -0.5  0.5
+ 0.5  0.5  0.5
+-0.5  0.5  0.5
+
+€ Numero de caras
+12
+
+€ Indices de vertices
+
+€ Cara trasera (-Z)
+0 1 2
+0 2 3
+
+€ Cara delantera (+Z)
+4 5 6
+4 6 7
+
+€ Cara inferior, abajo (-Y)
+0 1 5
+0 5 4
+
+€ Cara superior, arriba (+Y)
+2 3 7
+2 7 6
+
+€ Cara izquierda (-X)
+0 3 7
+0 7 4
+
+€ Cara derecha (+X)
+1 2 6
+1 6 5
+
+€ Numero de colores
+8
+
+€ Colores por vertice
+0 0 0  1.0 0.0 0.0 1.0
+1 1 1  0.0 1.0 0.0 1.0
+2 2 2  0.0 0.0 1.0 1.0
+3 3 3  1.0 1.0 0.0 1.0
+4 4 4  1.0 0.0 1.0 1.0
+5 5 5  0.0 1.0 1.0 1.0
+6 6 6  1.0 1.0 1.0 1.0
+7 7 7  0.5 0.5 0.5 1.0

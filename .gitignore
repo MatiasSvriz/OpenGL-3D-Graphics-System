@@ -1,0 +1,31 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.vcxproj.user
+
+# Build directories
+x64/
+Debug/
+Release/
+
+# Compiled files
+*.obj
+*.exe
+*.pdb
+*.idb
+*.ipch
+*.ilk
+*.tlog
+
+# Temporary build files
+*.log
+*.lastbuildstate
+*.exe.recipe
+
+# Project archives
+*.zip
+
+# Operating system
+Thumbs.db
+.DS_Store

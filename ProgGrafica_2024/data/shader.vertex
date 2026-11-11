@@ -1,0 +1,53 @@
+#version 330
+
+// ============================================================
+// Uniforms
+// ============================================================
+// M   -> matriz modelo. Pasa de espacio de modelo a mundo.
+// MVP -> matriz modelo-vista-proyeccion. Pasa de modelo a clip space.
+// ============================================================
+
+uniform mat4 M;
+uniform mat4 MVP;
+
+// ============================================================
+// Atributos de vertice
+// ============================================================
+// Estos nombres deben coincidir con Render.cpp y Program.cpp.
+// ============================================================
+
+in vec4 vPos;
+in vec4 vColor;
+in vec4 vNormal;
+in vec4 vTextureCoords;
+
+// ============================================================
+// Datos enviados al fragment shader
+// ============================================================
+
+out vec4 fColor;
+out vec4 fPos;
+out vec4 fNormal;
+out vec4 fTextureCoords;
+
+void main()
+{
+    // Posicion final del vertice en pantalla
+    gl_Position = MVP * vPos;
+
+    // Color interpolado hacia el fragment shader
+    fColor = vColor;
+
+    // Posicion del vertice en coordenadas de mundo
+    // Esto se usa luego para calcular la direccion hacia la luz.
+    fPos = M * vPos;
+
+    // Transformacion correcta de normales
+    // Usamos la inversa transpuesta de M para que las normales sigan
+    // siendo correctas incluso si hay escalados no uniformes.
+    fNormal = inverse(transpose(M)) * vNormal;
+    fNormal = vec4(normalize(fNormal.xyz), 0.0);
+
+    // Coordenadas de textura
+    fTextureCoords = vTextureCoords;
+}
